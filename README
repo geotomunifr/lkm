@@ -1,1 +1,5 @@
 linux kernel module testing
+
+1. push this directory under ./drivers/
+2. add source "drivers/lkm/Kconfig" into ./drivers/Kconfig
+3. add obj-y += lkm/ into ./drivers/Makefile
