@@ -26,3 +26,7 @@ config LKM_MMAP
 config LKM_PROC
 	tristate "user interface by proc"
 	default m
+
+config LKM_SIGNAL
+	tristate "user interface by signal"
+	default m
