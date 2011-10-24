@@ -2,3 +2,7 @@
 config LKM_UDP
 	tristate "user interface by UDP"
 	default m
+
+config LKM_CDEV
+	tristate "user interface by char device"
+	default m
