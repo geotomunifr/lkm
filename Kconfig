@@ -14,3 +14,7 @@ config LKM_NETLINK
 config LKM_IOCTL
 	tristate "user interface by ioctl"
 	default m
+
+config LKM_DEBUGFS
+	tristate "user interface by debugfs"
+	default m
