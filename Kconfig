@@ -6,3 +6,7 @@ config LKM_UDP
 config LKM_CDEV
 	tristate "user interface by char device"
 	default m
+
+config LKM_NETLINK
+	tristate "user interface by netlink"
+	default m
