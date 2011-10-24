@@ -10,3 +10,7 @@ config LKM_CDEV
 config LKM_NETLINK
 	tristate "user interface by netlink"
 	default m
+
+config LKM_IOCTL
+	tristate "user interface by ioctl"
+	default m
