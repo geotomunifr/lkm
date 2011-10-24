@@ -34,3 +34,7 @@ config LKM_SIGNAL
 config LKM_SYSCTL
 	tristate "user interface by sysctl"
 	default m
+
+config LKM_SYSFS
+	tristate "user interface by sysfs"
+	default m

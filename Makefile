@@ -19,3 +19,5 @@ obj-$(CONFIG_LKM_MMAP) += mmap_simple_kernel.o
 obj-$(CONFIG_LKM_SIGNAL) += signal_kernel.o
 
 obj-$(CONFIG_LKM_SYSCTL) += sysctl.o
+
+obj-$(CONFIG_LKM_SYSFS) += sysfs_ex2.o sysfs_ex.o
