@@ -1,4 +1,10 @@
 
+menuconfig LKM
+	bool "LKM"
+	default y
+
+if LKM
+
 config LKM_UDP
 	tristate "user interface by UDP"
 	default m
@@ -38,3 +44,5 @@ config LKM_SYSCTL
 config LKM_SYSFS
 	tristate "user interface by sysfs"
 	default m
+
+endif # LKM
