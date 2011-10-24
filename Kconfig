@@ -18,3 +18,7 @@ config LKM_IOCTL
 config LKM_DEBUGFS
 	tristate "user interface by debugfs"
 	default m
+
+config LKM_MMAP
+	tristate "user interface by mmap"
+	default m

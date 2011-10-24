@@ -13,3 +13,5 @@ obj-$(CONFIG_LKM_NETLINK) += gnKernel.o
 obj-$(CONFIG_LKM_IOCTL) += ioctl.o
 
 obj-$(CONFIG_LKM_DEBUGFS) += debugfs.o
+
+obj-$(CONFIG_LKM_MMAP) += mmap_simple_kernel.o
