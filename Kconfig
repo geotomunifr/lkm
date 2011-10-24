@@ -22,3 +22,7 @@ config LKM_DEBUGFS
 config LKM_MMAP
 	tristate "user interface by mmap"
 	default m
+
+config LKM_PROC
+	tristate "user interface by proc"
+	default m
