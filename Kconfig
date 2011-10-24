@@ -30,3 +30,7 @@ config LKM_PROC
 config LKM_SIGNAL
 	tristate "user interface by signal"
 	default m
+
+config LKM_SYSCTL
+	tristate "user interface by sysctl"
+	default m
