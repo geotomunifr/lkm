@@ -96,7 +96,7 @@ int doc_exmpl_echo(struct sk_buff *skb_2, struct genl_info *info)
 	genlmsg_end(skb, msg_head);
 
         /* send the message back */
-	rc = genlmsg_unicast(skb,info->snd_pid );
+	rc = genlmsg_unicast(&init_net, skb,info->snd_pid );
 	if (rc != 0)
 		goto out;
 	return 0;
