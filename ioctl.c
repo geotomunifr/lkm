@@ -45,7 +45,7 @@ int device_ioctl(struct inode *inode, struct file *filep, unsigned int cmd, unsi
 static struct file_operations fops = {
 	.read = device_read, 
 	.write = device_write,
-	.ioctl = device_ioctl,
+	.unlocked_ioctl = device_ioctl,
 };
 
 static int __init cdevexample_module_init(void)
