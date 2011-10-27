@@ -5,6 +5,7 @@
 #include <linux/debugfs.h>
 
 #include <linux/mm.h>  /* mmap related stuff */
+#include <linux/slab.h>
 
 struct dentry  *file1;
 
@@ -28,41 +29,9 @@ void mmap_close(struct vm_area_struct *vma)
 	info->reference--;
 }
 
-/* nopage is called the first time a memory area is accessed which is not in memory,
- * it does the actual mapping between kernel and user space memory
- */
-struct page *mmap_nopage(struct vm_area_struct *vma, unsigned long address, int *type)
-{
-	struct page *page;
-	struct mmap_info *info;
-	/* is the address valid? */
-	if (address > vma->vm_end) {
-		printk("invalid address\n");
-		return NOPAGE_SIGBUS;
-	}
-	/* the data is in vma->vm_private_data */
-	info = (struct mmap_info *)vma->vm_private_data;
-	if (!info->data) {
-		printk("no data\n");
-		return NULL;	
-	}
-
-	/* get the page */
-	page = virt_to_page(info->data);
-	
-	/* increment the reference count of this page */
-	get_page(page);
-	/* type is the page fault type */
-	if (type)
-		*type = VM_FAULT_MINOR;
-
-	return page;
-}
-
 struct vm_operations_struct mmap_vm_ops = {
 	.open =     mmap_open,
 	.close =    mmap_close,
-	.nopage =   mmap_nopage,
 };
 
 int my_mmap(struct file *filp, struct vm_area_struct *vma)
