@@ -45,4 +45,8 @@ config LKM_SYSFS
 	tristate "user interface by sysfs"
 	default m
 
+config LKM_HELPER
+	tristate "usermode helper"
+	default m
+
 endif # LKM
