@@ -60,7 +60,7 @@ int my_open(struct inode *inode, struct file *filp)
 	/* obtain new memory */
     	info->data = (char *)get_zeroed_page(GFP_KERNEL);
 	memcpy(info->data, "hello from kernel this is file: ", 32);
-	memcpy(info->data + 32, filp->f_dentry->d_name.name, strlen(filp->f_dentry->d_name.name));
+	memcpy(info->data + 32, filp->f_path.dentry->d_name.name, strlen(filp->f_path.dentry->d_name.name));
 	/* assign this info struct to the file */
 	filp->private_data = info;
 	return 0;
